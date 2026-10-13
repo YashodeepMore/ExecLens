@@ -5,7 +5,7 @@ import uuid
 from datetime import datetime
 
 from .models import Event, EventStatus, EventType
-from .contex import current_span, current_trace
+from .context import current_span, current_trace, current_events
 
 logger = logging.getLogger("sdk.tracer")
 
@@ -17,11 +17,19 @@ class Tracer:
     """
 
     def __init__(self):
-        self.trace_id = str(uuid.uuid4())
+        self.trace_id = current_trace.get()
+
+        if self.trace_id == "":
+            self.trace_id = str(uuid.uuid4())
+            current_trace.set(self.trace_id)
+
         self.events = []
         logger.debug(f"Tracer created | trace_id={self.trace_id}")
 
     def start(self, name: str, event_type: EventType, parent_span_id=None):
+        if parent_span_id is None:
+            parent_span_id = current_span.get()
+
         """
         Starts a new span. Returns the span_id.
         Called by: agents, tools, LLM wrappers when they begin work.
@@ -44,6 +52,7 @@ class Tracer:
             logger.exception(f"Failed to create span '{name}': {e}")
             raise
 
+        current_span.set(span_id)
         return span_id
 
     def complete(self, span_id: str, duration_ms: float):

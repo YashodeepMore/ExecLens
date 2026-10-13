@@ -14,4 +14,3 @@ wheels/
 #file and folders
 backend/logs
 .pytest_cache
-tests

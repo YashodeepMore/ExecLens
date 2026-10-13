@@ -1,0 +1,76 @@
+======================================================================
+  AI OBSERVATORY - Demo Agent Test Results
+  Generated: 2026-10-08 11:20:21
+======================================================================
+
+  Total: 52   |   Passed: 52   |   Failed: 0
+
+----------------------------------------------------------------------
+
+
+  [tests/test_agent_scenarios.py]
+
+    [PASS]  test_research_agent_completes_successfully  (0.014s)
+    [PASS]  test_code_generation_agent_completes_successfully  (0.009s)
+    [PASS]  test_data_analysis_agent_completes_successfully  (0.009s)
+    [PASS]  test_orchestrator_all_agents_succeed  (0.017s)
+    [PASS]  test_agent_with_multiple_tool_calls  (0.013s)
+    [PASS]  test_llm_call_failure  (0.006s)
+    [PASS]  test_tool_search_failure  (0.001s)
+    [PASS]  test_code_execution_failure  (0.001s)
+    [PASS]  test_database_query_failure  (0.001s)
+    [PASS]  test_calculator_failure  (0.001s)
+    [PASS]  test_cascading_failure_llm_breaks_agent  (0.001s)
+    [PASS]  test_orchestrator_partial_failure  (0.002s)
+    [PASS]  test_all_agent_steps_fail  (0.001s)
+    [PASS]  test_all_spans_share_trace_id  (0.001s)
+    [PASS]  test_agent_span_is_parent_of_children  (0.001s)
+    [PASS]  test_event_types_are_correct  (0.001s)
+    [PASS]  test_completed_events_have_positive_duration  (0.001s)
+    [PASS]  test_failed_events_have_error_metadata  (0.001s)
+    [PASS]  test_event_timestamps_are_present  (0.001s)
+    [PASS]  test_deeply_nested_agent_calls  (0.001s)
+    [PASS]  test_high_volume_events_reach_backend  (0.083s)
+    [PASS]  test_llm_token_usage_tracking  (0.001s)
+    [PASS]  test_different_tracers_produce_different_traces  (0.015s)
+    [PASS]  test_agent_run_produces_realistic_trace_tree  (0.001s)
+
+  [tests/test_event_api.py]
+
+    [PASS]  test_health_check_returns_ok  (0.003s)
+    [PASS]  test_post_single_event  (0.002s)
+    [PASS]  test_post_agent_event  (0.003s)
+    [PASS]  test_post_tool_event  (0.002s)
+    [PASS]  test_post_llm_event  (0.002s)
+    [PASS]  test_post_failed_event  (0.002s)
+    [PASS]  test_display_events_empty_initially  (0.002s)
+    [PASS]  test_display_returns_posted_event  (0.004s)
+    [PASS]  test_display_multiple_events  (0.010s)
+    [PASS]  test_tracer_events_reach_backend  (0.004s)
+    [PASS]  test_tracer_preserves_trace_id_in_backend  (0.004s)
+    [PASS]  test_parent_child_events_reach_backend  (0.006s)
+
+  [tests/test_sdk_tracer.py]
+
+    [PASS]  test_tracer_generates_unique_trace_id  (0.000s)
+    [PASS]  test_tracer_trace_id_is_uuid_format  (0.000s)
+    [PASS]  test_start_creates_event  (0.000s)
+    [PASS]  test_start_event_has_started_status  (0.000s)
+    [PASS]  test_start_returns_unique_span_ids  (0.001s)
+    [PASS]  test_multiple_spans_share_trace_id  (0.001s)
+    [PASS]  test_complete_updates_status  (0.000s)
+    [PASS]  test_complete_sets_duration  (0.000s)
+    [PASS]  test_fail_updates_status  (0.001s)
+    [PASS]  test_fail_stores_error_in_metadata  (0.001s)
+    [PASS]  test_child_span_references_parent  (0.001s)
+    [PASS]  test_root_span_has_no_parent  (0.000s)
+    [PASS]  test_deep_nesting  (0.001s)
+    [PASS]  test_agent_type  (0.001s)
+    [PASS]  test_tool_type  (0.000s)
+    [PASS]  test_llm_type  (0.000s)
+
+======================================================================
+
+  All tests passed!
+
+======================================================================
